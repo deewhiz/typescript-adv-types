@@ -1,9 +1,11 @@
 # Indexable\<V\>
-A homogenous collection of `number`-`V?` key-value pairs that has the following properties:
+A homogeneous collection of `number`-`V?` key-value pairs that has the following properties:
 - Only numbers can be used to index into the collection.
 - It is unknown whether a key-value pair exists in the collection so a `V?` is always returned.
 
 -----
+
+## Creation
 Create a `Indexable<string>`
 ```
 const indexable: Indexable<string> = {
@@ -13,7 +15,7 @@ const indexable: Indexable<string> = {
 };
 ```
 
-Read a value for a key
+## Access values
 ```
 // using bracket syntax...
 const seventeen: string | undefined = indexable[17];
@@ -23,28 +25,22 @@ const seventyKey = 70;
 const seventy = indexable[seventyKey];
 ```
 
-Add a new key-value pair
-```
-indexable[4] = 'four';
-```
-
-Update an existing value
+## Add / Update values
 ```
 indexable[4] = 'five;
 ```
 
-Delete a key-value pair
-```
-delete indexable[4];
-```
+-----
 
-**The following are errors:**
+## Errors
 1. Adding a value that isn't of type `V`
 ```
-indexable[7] = 7;
+const indexable: Indexable<string> = {};
+indexable[7] = 7; // 7 is not a valid `string` value
 ```
 
 2. Using a non-number as a key
 ```
-const seven = indexable['7'];
+const indexable: Indexable<string> = {};
+const seven = indexable['7']; // '7' is not a valid key
 ```
