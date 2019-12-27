@@ -6,7 +6,7 @@ A homogeneous collection of `number`-`V?` key-value pairs that has the following
 -----
 
 ## Creation
-Create a `Indexable<string>`
+Create an `Indexable`
 ```
 const indexable: Indexable<string> = {
     0: 'zero',

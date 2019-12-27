@@ -6,7 +6,7 @@ A homogeneous collection of `string`-`V?` key-value pairs that has the following
 -----
 
 ## Creation
-Create a `Dict<number>`
+Create a `Dict`
 ```
 const dict: Dict<number> = {
     zero: 0,
