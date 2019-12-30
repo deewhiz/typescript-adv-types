@@ -8,8 +8,8 @@ A homogeneous collection of `K[keyof K]`-`V` key-value pairs with the following 
 ## Creation
 Create a `KeyedMap` using a tuple
 ```
-type dimensions = ['width', 'height', 'depth'];
-const tupleMap: KeyedMap<dimensions, number> = {
+type Dimensions = ['width', 'height', 'depth'];
+const tupleMap: KeyedMap<Dimensions, number> = {
     width: 3,
     height: 4,
     depth: 5,

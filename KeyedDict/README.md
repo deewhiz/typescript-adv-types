@@ -9,8 +9,8 @@ A homogeneous collection of `K[keyof K]`-`V` key-value pairs with the following 
 ## Creation
 Create a `KeyedDict` using a tuple
 ```
-type dimensions = ['idle', 'loading', 'running'];
-const tupleDict: KeyedDict<dimensions, number> = {
+type States = ['idle', 'loading', 'running'];
+const tupleDict: KeyedDict<States, number> = {
     idle: Date.now(),
     loading: Date.now(),
 }
@@ -56,7 +56,7 @@ const loadingTime = enumDict[State.LOADING];
 tupleDict.idle = Date.now();
 
 // ...using an enum value
-enumDict[Dimention.DEPTH] = Date.now();
+enumDict[State.IDLE] = Date.now();
 ```
 
 -----
