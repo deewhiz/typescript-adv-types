@@ -50,6 +50,15 @@ const iBarCtor: Ctor<IBar, [number, string]> = Bar;
 const bar: IBar = new iBarCtor(17, 'Hello, World!');
 ```
 
+With arguments using `ConstructorParameters` 
+(this somewhat defeats the purpose of the interface by tying it to the concreate Bar class)
+```
+// set up `Ctor`
+const iBarCtor: Ctor<IBar, ConstructorParameters<typeof Bar>> = Bar;
+
+// construct `IBar` using `Ctor`
+const bar: IBar = new iBarCtor(71, 'Goodbye');
+
 -----
 
 ## Errors
