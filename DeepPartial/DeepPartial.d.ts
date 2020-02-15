@@ -1,5 +1,6 @@
 /**
  * An object that looks like a `T`, but every property, and every properties' properties, etc. are optional.
+ * Opposite of `DeepRequired<T>`
  */
 export type DeepPartial<T> =
     T extends Promise<infer R> ? Promise<DeepPartial<R>> :

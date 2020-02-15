@@ -15,7 +15,7 @@ interface IFoo {
     o: {
         n: number;
         s: string;
-    }
+    };
 }
 
 const readonlyFoo: DeepReadonly<IFoo> = { /* ... */ }

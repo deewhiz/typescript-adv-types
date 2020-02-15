@@ -1,6 +1,6 @@
 # Typeof\<T\>
-The type of `T` based on its prototype.
-In Typescript, this acts more like Javascript's `instanceof` (due to Typescript structural typing)
+The type of `T`'s constructor based on its prototype.
+In Typescript, this acts like Javascript's `instanceof` (due to Typescript structural typing)
 
 -----
 

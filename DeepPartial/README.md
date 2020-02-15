@@ -12,7 +12,7 @@ interface IFoo {
     o: {
         n: number;
         s: string;
-    }
+    };
 }
 
 const partialFoo: DeepPartial<IFoo> = { /* ... */ }
@@ -36,11 +36,6 @@ let n: number | undefined;
 if (partialFoo.o) {
     n = partialFoo.o.n;
 }
-```
-
-## Add / Update values
-```
-partialFoo.a = [1, 2, 3, 4];
 ```
 
 -----
