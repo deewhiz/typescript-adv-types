@@ -30,7 +30,7 @@ type DeepReadonlyWithTypedArray<T> = {
 ## Issue with Typescript (as of 3.7.3)
 #### Iterating a `Readonly<Float32Array>`
 ```
-const floatArray: Readonly<Float32Array> = new FloatArray([1, 2, 3, 2, 1]);
+const floatArray: Readonly<Float32Array> = new Float32Array([1, 2, 3, 2, 1]);
 
 for (const el of floatArray) {}
 // Error: Type 'Readonly<Float32Array>' is not an array type or a string type or
@@ -50,10 +50,8 @@ type Readonly<T> = T extends ReadonlyTypedArray | TypedArray ? ReadonlyTypedArra
 #### Use with DeepReadonly<T>
 A similar issue and workaround is present with `DeepReadonly<TypedArray>`
 ```
-type DeepReadonlyWithTypedArray<T> = T extends ReadonlyTypedArray | TypedArray ? ReadonlyTypedArray : {
-    readonly [P in keyof T]:
-        T[P] extends ReadonlyTypedArray | TypedArray ? ReadonlyTypedArray : DeepReadonly<T[P]>;
-};
+type DeepReadonlyWithTypedArray<T> = T extends ReadonlyTypedArray | TypedArray ? ReadonlyTypedArray : DeepReadonly<T>;
+
 ```
 
 -----
